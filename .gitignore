@@ -1,0 +1,6 @@
+.git
+.eslintrc.json
+
+node_modules/
+
+README - internal.txt

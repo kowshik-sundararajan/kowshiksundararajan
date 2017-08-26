@@ -1,0 +1,23 @@
+{
+  "name": "kowshiksundararajan",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kowshik-sundararajan/kowshiksundararajan.git"
+  },
+  "author": "Kowshik Sundararajan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kowshik-sundararajan/kowshiksundararajan/issues"
+  },
+  "homepage": "https://github.com/kowshik-sundararajan/kowshiksundararajan#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "hbs": "^4.0.1"
+  }
+}
