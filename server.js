@@ -3,8 +3,6 @@ const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
-const env = require('./env.json');
-
 const port = process.env.PORT || 3000;
 var app = express();
 
