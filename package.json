@@ -4,7 +4,9 @@
   "description": "Personal Website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "restart": "pm2 restart all",
+    "start": "pm2 start server.js -i max — name=\"kowshiksundararajan\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "express": "^4.15.4",
     "hbs": "^4.0.1",
     "nodemailer": "^4.0.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "pm2": "^2.6.1"
   }
 }
