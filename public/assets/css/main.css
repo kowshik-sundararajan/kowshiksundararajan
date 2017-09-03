@@ -2217,11 +2217,12 @@
 		ul.labeled-icons {
 			list-style: none;
 			padding: 0;
+			margin: 0 0 2em 0;
 		}
 
 			ul.labeled-icons li {
 				line-height: 1.75em;
-				margin: 1.5em 0 0 0;
+				margin: 0;
 				padding-left: 2.25em;
 				position: relative;
 			}
