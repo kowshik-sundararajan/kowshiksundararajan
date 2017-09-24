@@ -1994,7 +1994,7 @@
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
-			background: url("images/overlay.png");
+			/*background: url("images/overlay.png");*/
 			border-radius: 0.35em;
 			content: '';
 			display: block;
@@ -2009,7 +2009,7 @@
 		.image.thumb {
 			text-align: center;
 		}
-
+/*
 			.image.thumb:after {
 				-moz-transition: opacity 0.2s ease-in-out;
 				-webkit-transition: opacity 0.2s ease-in-out;
@@ -2032,16 +2032,16 @@
 				text-decoration: none;
 				top: 50%;
 				white-space: nowrap;
-			}
+			}*/
 
 			.image.thumb:hover:after {
 				opacity: 1.0;
 			}
 
-			.image.thumb:hover:before {
+/*			.image.thumb:hover:before {
 				background: url("images/overlay.png"), url("images/overlay.png");
 				opacity: 1.0;
-			}
+			}*/
 
 		.image img {
 			border-radius: 0.35em;
@@ -2579,8 +2579,8 @@
 
 		#main > section {
 			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
+			margin: 2em 0 0 0;
+			padding: 2em 0 0 0;
 		}
 
 			#main > section:first-child {
@@ -3050,8 +3050,8 @@
 			}
 
 				#main > section {
-					margin: 2.25em 0 0 0;
-					padding: 2.25em 0 0 0;
+					margin: 2em 0 0 0;
+					padding: 2em 0 0 0;
 				}
 
 		/* Poptrox */
