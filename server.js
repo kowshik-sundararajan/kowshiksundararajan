@@ -15,10 +15,19 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var _underProgess = true;
 
-app.get('/', (request, response) => {
-    response.render('index.hbs');
-});
+
+if (_underProgess) {
+    app.get('/', (request, response) => {
+        response.render('not-ready.hbs');
+    });
+} else {
+    app.get('/', (request, response) => {
+        response.render('index.hbs');
+    }); 
+}
+
 
 
 app.get('/resume', (request, response) => {
