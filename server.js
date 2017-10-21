@@ -28,7 +28,7 @@ app.use(helmet.contentSecurityPolicy({
 }));
 app.use(helmet.hsts({
   // Must be at least 18 weeks to be approved by Google
-  maxAge: 10886400,
+  maxAge: 31536000,
 
   // Must be enabled to be approved by Google
   includeSubDomains: true,
