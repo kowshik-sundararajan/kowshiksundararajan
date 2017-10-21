@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 const path = require('path');
 const fs = require('fs');
+const helmet = require('helmet');
 
 const port = process.env.PORT || 3000;
 var app = express();
@@ -15,8 +16,26 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var _underProgess = true;
 
+app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'", 'fonts.googleapis.com'],
+    fontSrc: ["'self'", 'fonts.gstatic.com data:', 'fonts.googleapis.com'],
+    scriptSrc: ["'self'", 'fonts.googleapis.com', 'code.jquery.com']
+  }
+}));
+app.use(helmet.hsts({
+  // Must be at least 18 weeks to be approved by Google
+  maxAge: 10886400,
+
+  // Must be enabled to be approved by Google
+  includeSubDomains: true,
+  preload: true
+}));
+
+var _underProgess = true;
 
 if (_underProgess) {
     app.get('/', (request, response) => {
@@ -29,10 +48,8 @@ if (_underProgess) {
 }
 
 
-
 app.get('/resume', (request, response) => {
     var data = fs.readFileSync('./public/Kowshik_Sundararajan_Resume.pdf');
-    // response.setHeader('Kowshik Sundararajan CV');
     response.contentType('application/pdf');
     response.send(data);
 });
