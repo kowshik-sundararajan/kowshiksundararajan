@@ -2996,6 +2996,12 @@
 				width: 100%;
 			}
 
+		.image.avatar img {
+				border-radius: 100%;
+				width: 150%;
+				margin-left: -1.5em;
+		}
+
 	}
 
 /* Small */
@@ -3073,7 +3079,6 @@
 				.poptrox-popup .nav-previous:before {
 					margin-top: -1em;
 				}
-
 	}
 
 /* XSmall */
@@ -3113,6 +3118,16 @@
 					ul.actions.small li:first-child {
 						padding-top: 0;
 					}
+		
+		.image.avatar img {
+				border-radius: 100%;
+				width: 150%;
+				margin-left: -1.5em;
+		}
+
+		.mobile-items {
+			margin-left: 2em;
+		}
 
 		/* Header */
 
