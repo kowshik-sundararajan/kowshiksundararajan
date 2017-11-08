@@ -2088,7 +2088,8 @@
 
 			.image.avatar img {
 				border-radius: 100%;
-				width: 100%;
+				width: 150%;
+				margin-left: -3em;
 			}
 
 /* List */
@@ -2447,7 +2448,8 @@
 	}
 
 		.work-item .image {
-			margin: 0 0 1.5em 0;
+			margin: 0;
+			width: 75%;
 		}
 
 		.work-item h3 {
@@ -2573,7 +2575,7 @@
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 4em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
 
@@ -2589,6 +2591,13 @@
 				padding-top: 0;
 			}
 
+/* 404 Main */
+	#not-found-main {
+		margin-left: 35%;
+		max-width: 54em;
+		padding: 4em 4em 4em 4em;
+		width: calc(100% - 35%);
+	}
 /* Poptrox */
 
 	@-moz-keyframes spin {
@@ -3125,4 +3134,13 @@
 				padding-left: 0;
 			}
 
+	}
+
+	#education-header {
+		border-top:solid 2px #efefef; margin-top: 2em; padding-top: 2em;
+	}
+
+	#contact-row {
+		margin: 0;
+		width: 100%;
 	}

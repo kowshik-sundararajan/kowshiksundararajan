@@ -35,23 +35,15 @@ app.use(helmet.hsts({
   preload: true
 }));
 
-var _underProgess = true;
-
-if (_underProgess) {
-    app.get('/', (request, response) => {
-        response.render('not-ready.hbs');
-    });
-} else {
-    app.get('/', (request, response) => {
-        response.render('index.hbs');
-    }); 
-}
+app.get('/', (request, response) => {
+  response.render('index.hbs');
+});
 
 
 app.get('/resume', (request, response) => {
-    var data = fs.readFileSync('./public/Kowshik_Sundararajan_Resume.pdf');
-    response.contentType('application/pdf');
-    response.send(data);
+  var data = fs.readFileSync('./public/Kowshik_Sundararajan_Resume.pdf');
+  response.contentType('application/pdf');
+  response.send(data);
 });
 
 
@@ -67,7 +59,7 @@ app.use((err, request, response) => {
 
 
 app.listen(port, () => {
-    console.log(`* app started on port ${port}`);
+  console.log(`* app started on port ${port}`);
 });
 
 
