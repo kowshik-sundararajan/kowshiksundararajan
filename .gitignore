@@ -1,6 +1,6 @@
 .git
 .eslintrc.json
-.synk
+.snyk
 
 node_modules/
 
