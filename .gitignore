@@ -1,5 +1,6 @@
 .git
 .eslintrc.json
+.synk
 
 node_modules/
 
