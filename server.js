@@ -25,9 +25,10 @@ app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'", 'www.google-analytics.com'],
-    styleSrc: ["'self'", 'fonts.googleapis.com'],
-    fontSrc: ["'self'", 'fonts.gstatic.com data:', 'fonts.googleapis.com'],
-    scriptSrc: ["'self'", 'fonts.googleapis.com', 'www.google-analytics.com', 'www.googletagmanager.com', (req, res) => {
+    styleSrc: ["'self'"],
+    imgSrc: ["'self'", 'data:', 'www.google-analytics.com'],
+    fontSrc: ["'self'", 'fonts.gstatic.com data:'],
+    scriptSrc: ["'self'", 'www.google-analytics.com', 'www.googletagmanager.com', (req, res) => {
       return `nonce-${res.locals.nonce}`;
     }]
   }
