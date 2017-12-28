@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const uuid = require('uuid');
 const helmet = require('helmet');
 const express = require('express');
 const favicon = require('serve-favicon');
@@ -15,6 +16,10 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(function (req, res, next) {
+  res.locals.nonce = uuid.v4()
+  next();
+})
 
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
@@ -22,7 +27,9 @@ app.use(helmet.contentSecurityPolicy({
     defaultSrc: ["'self'", 'www.google-analytics.com'],
     styleSrc: ["'self'", 'fonts.googleapis.com'],
     fontSrc: ["'self'", 'fonts.gstatic.com data:', 'fonts.googleapis.com'],
-    scriptSrc: ["'self'", 'fonts.googleapis.com', 'ajax.aspnetcdn.com', 'www.google-analytics.com', 'www.googletagmanager.com']
+    scriptSrc: ["'self'", 'fonts.googleapis.com', 'www.google-analytics.com', 'www.googletagmanager.com', (req, res) => {
+      return `nonce-${res.locals.nonce}`;
+    }]
   }
 }));
 app.use(helmet.hsts({
@@ -35,7 +42,28 @@ app.use(helmet.hsts({
 }));
 
 app.get('/', (request, response) => {
-  response.render('index.hbs');
+  const structuredData = `<script type="application/ld+json" nonce="${response.locals.nonce}">
+  	{
+  		"@context": "https://schema.org",
+  		"@type": "Person",
+  		"name": "Kowshik Sundararajan",
+  		"description": "Web Developer & Animal Rights Activist",
+  		"url": "https://www.kowshiksundararajan.com",
+  		"jobTitle": "National University of Singapore",
+  		"gender": "non-binary",
+  		"image": "https://www.kowshiksundararajan.com/images/favicon.ico",
+  		"sameAs": [
+  				"https://www.linkedin.com/in/kowshik-sundararajan/",
+  				"https://github.com/kowshik-sundararajan",
+  				"https://www.facebook.com/activistkow",
+  				"https://twitter.com/therowdykowdy"
+  		]
+  	}
+  </script>`;
+  response.render('index.hbs', {
+    structuredData,
+    nonce: response.locals.nonce
+  });
 });
 
 
