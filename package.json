@@ -30,5 +30,8 @@
     "serve-favicon": "^2.4.5",
     "snyk": "^1.52.0"
   },
-  "snyk": true
+  "snyk": true,
+  "devDependencies": {
+    "node-minify": "^2.4.1"
+  }
 }

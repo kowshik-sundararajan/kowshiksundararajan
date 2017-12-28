@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": false,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "off"
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  }
+}

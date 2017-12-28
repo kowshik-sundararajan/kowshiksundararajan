@@ -1,10 +1,9 @@
-const express = require('express');
-const hbs = require('hbs');
-const bodyParser = require('body-parser');
-const favicon = require('serve-favicon');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const helmet = require('helmet');
+const express = require('express');
+const favicon = require('serve-favicon');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
 var app = express();
@@ -20,10 +19,10 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    defaultSrc: ["'self'"],
+    defaultSrc: ["'self'", 'www.google-analytics.com'],
     styleSrc: ["'self'", 'fonts.googleapis.com'],
     fontSrc: ["'self'", 'fonts.gstatic.com data:', 'fonts.googleapis.com'],
-    scriptSrc: ["'self'", 'fonts.googleapis.com', 'code.jquery.com']
+    scriptSrc: ["'self'", 'fonts.googleapis.com', 'ajax.aspnetcdn.com', 'www.google-analytics.com', 'www.googletagmanager.com']
   }
 }));
 app.use(helmet.hsts({
@@ -64,6 +63,3 @@ app.listen(port, () => {
 
 
 module.exports.app = app;
-
-
-
