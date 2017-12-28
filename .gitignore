@@ -1,6 +1,4 @@
 .git
-.eslintrc.json
-.snyk
 .DS_Store
 
 node_modules/
