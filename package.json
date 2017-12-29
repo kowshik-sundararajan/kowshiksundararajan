@@ -4,12 +4,9 @@
   "description": "Personal Website",
   "main": "server.js",
   "scripts": {
-    "test": "snyk test && echo \"No test scripts configured\" ",
+    "test": "echo \"No test scripts configured\" ",
     "restart": "pm2 restart all",
     "start": "pm2 start server.js -i max — name=\"kowshiksundararajan\"",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
-    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
