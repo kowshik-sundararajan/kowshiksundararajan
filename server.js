@@ -24,11 +24,11 @@ app.use(function (req, res, next) {
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    defaultSrc: ["'self'", 'www.google-analytics.com'],
+    defaultSrc: ["'self'"],
     styleSrc: ["'self'"],
-    imgSrc: ["'self'", 'data:', 'www.google-analytics.com'],
+    imgSrc: ["'self'", 'data:'],
     fontSrc: ["'self'", 'fonts.gstatic.com data:'],
-    scriptSrc: ["'self'", 'www.google-analytics.com', 'www.googletagmanager.com', (req, res) => {
+    scriptSrc: ["'self'", (req, res) => {
       return `nonce-${res.locals.nonce}`;
     }]
   }
