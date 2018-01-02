@@ -43,6 +43,7 @@ app.use(helmet.hsts({
 }));
 
 app.get('/', (request, response) => {
+  const copyrightYear = new Date().getFullYear();
   const structuredData = `<script type="application/ld+json" nonce="${response.locals.nonce}">
   	{
   		"@context": "https://schema.org",
@@ -61,9 +62,11 @@ app.get('/', (request, response) => {
   		]
   	}
   </script>`;
+
   response.render('index.hbs', {
+    copyrightYear,
     structuredData,
-    nonce: response.locals.nonce
+    nonce: response.locals.nonce,
   });
 });
 
