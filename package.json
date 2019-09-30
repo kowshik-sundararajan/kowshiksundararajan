@@ -22,7 +22,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.0",
     "hbs": "^4.0.1",
-    "helmet": "^3.9.0",
+    "helmet": "^3.21.1",
     "nodemon": "^1.14.7",
     "pm2": "^2.7.0",
     "serve-favicon": "^2.4.5",
