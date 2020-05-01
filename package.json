@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"No test scripts configured\" ",
     "restart": "pm2 restart all",
-    "start": "pm2 start server.js -i max — name=\"kowshiksundararajan\""
+    "start": "pm2 start server.js -i max — name=\"kowshiksundararajan\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,7 @@
     "nodemon": "^1.14.7",
     "pm2": "^2.7.0",
     "serve-favicon": "^2.4.5",
-    "snyk": "^1.63.0",
+    "snyk": "^1.316.1",
     "uuid": "^3.1.0"
   },
   "snyk": true,
