@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -11,13 +11,13 @@ patch:
   'npm:debug:20170905':
     - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
         patched: '2017-11-30T15:39:16.041Z'
-      asset-resolver > debug:
-        patched: '2017-12-28T16:51:49.898Z'
     - pm2 > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
         patched: '2017-11-30T15:39:16.041Z'
-      postcss-image-inliner > asset-resolver > debug:
-        patched: '2017-12-28T16:51:49.898Z'
     - postcss-image-inliner > debug:
+        patched: '2017-12-28T16:51:49.898Z'
+    - asset-resolver > debug:
+        patched: '2017-12-28T16:51:49.898Z'
+    - postcss-image-inliner > asset-resolver > debug:
         patched: '2017-12-28T16:51:49.898Z'
   'npm:tough-cookie:20170905':
     - nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
@@ -31,3 +31,12 @@ patch:
         patched: '2017-12-28T16:51:49.898Z'
     - postcss-image-inliner > asset-resolver > debug > ms:
         patched: '2017-12-28T16:51:49.898Z'
+  SNYK-JS-LODASH-567746:
+    - pm2 > async > lodash:
+        patched: '2020-05-01T01:08:06.645Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-01T01:08:06.645Z'
+    - snyk > snyk-resolve-deps > lodash:
+        patched: '2020-05-01T01:08:06.645Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-01T01:08:06.645Z'
