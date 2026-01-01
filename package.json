@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/kowshik-sundararajan/kowshiksundararajan#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.0",
+    "body-parser": "^1.20.4",
+    "express": "^4.22.0",
     "hbs": "^4.0.1",
     "helmet": "^3.9.0",
-    "nodemon": "^1.14.7",
-    "pm2": "^2.7.0",
+    "nodemon": "^2.0.0",
+    "pm2": "^4.0.0",
     "serve-favicon": "^2.4.5",
     "snyk": "^1.63.0",
     "uuid": "^3.1.0"
